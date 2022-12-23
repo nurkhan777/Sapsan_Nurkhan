@@ -181,7 +181,7 @@ public class Main {
     } // Заканчивается метод main
 
     private static void shoping(int money) {
-        String[] shopList = new String[200]; //список покупок, максимум 100 позиций
+        String[] shopList = new String[200]; //список покупок, максимум 200 позиций
         int[] priceList = new int[shopList.length]; //список цен, равен со списком покупок
         Scanner scan = new Scanner(System.in);
         Date date = new Date();
