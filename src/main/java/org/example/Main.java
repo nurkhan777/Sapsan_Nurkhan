@@ -162,83 +162,87 @@ public class Main {
 
 //        int res = (int)power(2.7, 2);
 //        System.out.println(res);
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Добро пожаловать в супермаркет!");
-        System.out.println("Введите сколько у вас с собой денег: ");
-        int money = scan.nextInt();
-        if (money >= 10) {
-            shoping(money);
-        } else if (money == 0) {
-            System.out.println("Без денег покупки не возможны.");
-        } else if (money < 0) {
-            System.out.println("Не правильно ввели цифры, попробуйте заново.");
-        } else {
-            System.out.println("Слишком мало денег. Минимальная стоимость продуктов 10$");
-        }
+//        Scanner scan = new Scanner(System.in);
+//        System.out.println("Добро пожаловать в супермаркет!");
+//        System.out.println("Введите сколько у вас с собой денег: ");
+//        int money = scan.nextInt();
+//        if (money >= 10) {
+//            shoping(money);
+//        } else if (money == 0) {
+//            System.out.println("Без денег покупки не возможны.");
+//        } else if (money < 0) {
+//            System.out.println("Не правильно ввели цифры, попробуйте заново.");
+//        } else {
+//            System.out.println("Слишком мало денег. Минимальная стоимость продуктов 10$");
+//        }
 
+FootballPlayer player1 = new FootballPlayer("Terry", "Defender");
+FootballPlayer player2 = new FootballPlayer("Drogba", "Forward", 11, 40);
 
-
+player1.setNumber(26);
+System.out.println("Имя игрока " + player1.getName() + ", позиция " + player1.getPosition() + ", номер " + player1.getNumber());
+System.out.println("Второй игрок " + player2.getName());
     } // Заканчивается метод main
 
-    private static void shoping(int money) {
-        String[] shopList = new String[200]; //список покупок, максимум 200 позиций
-        int[] priceList = new int[shopList.length]; //список цен, равен со списком покупок
-        Scanner scan = new Scanner(System.in);
-        Date date = new Date();
-        Random random = new Random(); //для рандомных цен
-        int sum = 0; //для суммирования покупок
-        int count = 0; //для подсчета позиций
-
-        // Внесение продуктов:
-        for (int i = 0; i <= shopList.length; i++) {
-            System.out.println("Введите какой продукт собираетесь брать, либо слово 'стоп' если закончили покупки: ");
-            shopList[i] = scan.nextLine();
-            if (!shopList[i].equals("стоп") || shopList[i].equals("Стоп")) {
-                priceList[i] = random.nextInt(10, 100);
-                count++;
-            }
-            else {
-                break;
-            }
-        }
-
-        // Вывод списка:
-        System.out.println(date.toString());
-        System.out.println("Ваши покупки: ");
-        for (int i = 0; i <= shopList.length; i++) {
-            if (shopList[i].equals("стоп") || shopList[i].equals("Стоп")) {
-                break;
-            }
-            sum = sum + priceList[i];
-            System.out.println((i+1) + ". " + shopList[i] + " - " + priceList[i] + "$;");
-        }
-
-        System.out.println("Итого: " + sum + "$.");
-        System.out.println();
-
-        // Если не хватает денег, убираем продукты:
-        if (sum > money) {
-            while (sum > money) {
-                System.out.println("Не хватает " + (sum - money) + "$. Нужно " + sum + "$, а у вас " + money + "$. ");
-                System.out.println("Нужно убрать одну или несколько продуктов чтобы хватило оплатить. Напишите номер позиций в чеке: ");
-                int position = scan.nextInt();
-                if (position > count || position < 1) {
-                    System.out.println("Ошиблись номером позиций. Повторите попытку.");
-                    System.out.println();
-                }
-                else {
-                    System.out.println("Убираем продукт " + shopList[position - 1] + " стоимостью - " + priceList[position - 1] + "$.");
-                    System.out.println();
-                    sum = sum - priceList[position - 1];
-                }
-            }
-        }
-
-        // Вывод итоговой суммы:
-        System.out.println();
-        System.out.println("Оплата прошла, спасибо за покупку.");
-        System.out.println("На счету осталось " + (money - sum) + "$.");
-    }
+//    private static void shoping(int money) {
+//        String[] shopList = new String[200]; //список покупок, максимум 200 позиций
+//        int[] priceList = new int[shopList.length]; //список цен, равен со списком покупок
+//        Scanner scan = new Scanner(System.in);
+//        Date date = new Date();
+//        Random random = new Random(); //для рандомных цен
+//        int sum = 0; //для суммирования покупок
+//        int count = 0; //для подсчета позиций
+//
+//        // Внесение продуктов:
+//        for (int i = 0; i <= shopList.length; i++) {
+//            System.out.println("Введите какой продукт собираетесь брать, либо слово 'стоп' если закончили покупки: ");
+//            shopList[i] = scan.nextLine();
+//            if (!shopList[i].equals("стоп") || shopList[i].equals("Стоп")) {
+//                priceList[i] = random.nextInt(10, 100);
+//                count++;
+//            }
+//            else {
+//                break;
+//            }
+//        }
+//
+//        // Вывод списка:
+//        System.out.println(date.toString());
+//        System.out.println("Ваши покупки: ");
+//        for (int i = 0; i <= shopList.length; i++) {
+//            if (shopList[i].equals("стоп") || shopList[i].equals("Стоп")) {
+//                break;
+//            }
+//            sum = sum + priceList[i];
+//            System.out.println((i+1) + ". " + shopList[i] + " - " + priceList[i] + "$;");
+//        }
+//
+//        System.out.println("Итого: " + sum + "$.");
+//        System.out.println();
+//
+//        // Если не хватает денег, убираем продукты:
+//        if (sum > money) {
+//            while (sum > money) {
+//                System.out.println("Не хватает " + (sum - money) + "$. Нужно " + sum + "$, а у вас " + money + "$. ");
+//                System.out.println("Нужно убрать одну или несколько продуктов чтобы хватило оплатить. Напишите номер позиций в чеке: ");
+//                int position = scan.nextInt();
+//                if (position > count || position < 1) {
+//                    System.out.println("Ошиблись номером позиций. Повторите попытку.");
+//                    System.out.println();
+//                }
+//                else {
+//                    System.out.println("Убираем продукт " + shopList[position - 1] + " стоимостью - " + priceList[position - 1] + "$.");
+//                    System.out.println();
+//                    sum = sum - priceList[position - 1];
+//                }
+//            }
+//        }
+//
+//        // Вывод итоговой суммы:
+//        System.out.println();
+//        System.out.println("Оплата прошла, спасибо за покупку.");
+//        System.out.println("На счету осталось " + (money - sum) + "$.");
+//    }
 
 
 //    private static void sulifa(int randVal, int userVal) {
