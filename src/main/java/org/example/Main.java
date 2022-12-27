@@ -176,12 +176,16 @@ public class Main {
 //            System.out.println("Слишком мало денег. Минимальная стоимость продуктов 10$");
 //        }
 
-FootballPlayer player1 = new FootballPlayer("Terry", "Defender");
-FootballPlayer player2 = new FootballPlayer("Drogba", "Forward", 11, 40);
+//FootballPlayer player1 = new FootballPlayer("Terry", "Defender");
+//FootballPlayer player2 = new FootballPlayer("Drogba", "Forward", 11, 40);
+//
+//player1.setNumber(26);
+//System.out.println("Имя игрока " + player1.getName() + ", позиция " + player1.getPosition() + ", номер " + player1.getNumber());
+//System.out.println("Второй игрок " + player2.getName());
 
-player1.setNumber(26);
-System.out.println("Имя игрока " + player1.getName() + ", позиция " + player1.getPosition() + ", номер " + player1.getNumber());
-System.out.println("Второй игрок " + player2.getName());
+Kazakh kazakh1 = new Kazakh("Kipchak", "Nurkhan", new String[]{"1 ata", "2 ata", "3 ata", "4 ata", "5 ata", "6 ata", "7 ata"});
+System.out.println("Имя " + kazakh1.getName() + ", ру " + kazakh1.getRu() + ", 7 ата: ");
+kazakh1.getZhetiAta();
     } // Заканчивается метод main
 
 //    private static void shoping(int money) {

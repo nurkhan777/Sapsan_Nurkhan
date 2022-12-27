@@ -1,10 +1,10 @@
 package org.example;
 
 public class FootballPlayer {
-    String name;
-    String position;
-    int number;
-    int age;
+    private String name;
+    private String position;
+    private int number;
+    private int age;
 
     FootballPlayer(String name, String position) {
         this.name = name;
